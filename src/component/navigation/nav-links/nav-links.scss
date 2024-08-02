@@ -1,0 +1,26 @@
+.nav-links {
+    font-size: 20px;
+    span{
+      font-size: 20px;
+      cursor: pointer;
+      padding: 1.5rem;
+    }
+    span:hover{
+      opacity: 0.3;
+    }
+  }
+
+  .nav-links li {
+    margin-left: 4rem;
+    margin-top: 2rem;
+    font-size: 5px;
+  }
+  
+  .nav-links a {
+    color: #000000;
+    text-decoration: none;
+    padding: 1.5rem;
+  }
+  .nav-links a:hover{
+    opacity: 0.3;
+  }

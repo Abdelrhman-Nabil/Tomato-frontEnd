@@ -1,0 +1,96 @@
+.auth-page{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    left: 40%;
+    top: 10%;
+    .auth{
+        display: flex;
+        position: relative;
+        top: 60px;
+        width: 350px;
+        background-color: rgb(248, 226, 226);
+        box-shadow:  1px 5px 3px 1px black;
+        flex-direction: column;
+        margin-bottom: 25px;
+        border-radius: 15px;
+        justify-content: center;
+        .log{
+            display: flex;
+            position: absolute;
+            top: 35px;
+            right:45px;
+            cursor: pointer;
+            font-size: 22px;
+            z-index: 116;
+        }
+        .header{
+            display: flex;
+            position: relative;
+            height: 25%;
+            width: 25%;
+            margin-top: 33px;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .form{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+            left: 10%;
+             
+            // label{
+            //     display: flex;
+            //     position: relative;
+            //     top: 0px;
+            //     font-size: 18px;
+            //     left: 40px;
+            // }
+            // input{
+            //     display: flex;
+            //     position: relative;
+            //     width: 200px;
+            //     height: 30px;
+            //     left: 40px;
+            //     border-radius: 15px;
+
+            // }
+            .buttons-container{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                button{
+                    margin-top: 25px;
+                }
+            }
+        }
+       
+        .switchButton{
+            display: flex;
+            position: relative;
+            font-size: 22px;
+            margin: 10px;
+            left:8%;
+               span{
+                cursor: pointer;
+                color: rgb(106, 106, 255);
+    
+               }
+               span:hover{
+                opacity: 0.7;
+               }
+        }
+    
+    }
+}
+
+.login{
+    display: flex;
+    position: absolute;
+    top: 100px;
+}

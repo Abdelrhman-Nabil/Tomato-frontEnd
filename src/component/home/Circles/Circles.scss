@@ -1,0 +1,26 @@
+.circles{
+    display: flex;
+    position: relative;
+    background-color: white;
+    justify-content: center;
+    width: 100%;
+    .circles-map{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 47px;
+
+    }    
+}
+@media screen and (max-width:850px) {
+.circles{
+    width: 386px;
+    height: 159px;
+    overflow-y: scroll;
+    position: relative;
+    border-bottom: 1px solid black;
+    .circles-map{
+        left: 372px;
+        position: relative;
+    }
+}
+}

@@ -1,0 +1,49 @@
+.meal-preview-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  
+    .title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      color: orangered;
+    }
+   h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(4, 0.2fr);
+      column-gap: 5px;
+    } 
+  }
+  @media screen and (max-width:760px) {
+    .meal-preview-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      width: 50%;
+      left: 18%;
+       h2 {
+        
+        margin-left: 20px;
+       }
+        .preview {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 50px;
+        left: 5%;
+    
+      }
+    }
+  }
+  

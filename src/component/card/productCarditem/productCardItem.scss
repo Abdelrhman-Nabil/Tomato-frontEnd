@@ -1,0 +1,120 @@
+.carditem{
+    display: flex;
+    position:relative;
+    width: 250px;
+    height: 350px;
+    background-color: transparent;
+    flex-direction: column;
+    border: 0.2px solid rgb(221, 221, 214);
+    border-radius: 10px;
+    flex-direction: column;
+    margin-top: 5px;
+    transition:transform 0.4s;
+
+    .carditem-img{
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 60%;
+      margin-bottom: 10px;
+      img{
+        display: flex;
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    
+        
+      }
+
+    }
+    .operations{
+      display: flex;
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      right: 5px;
+      bottom: 5px;
+      bottom: 140px;
+      border-radius: 22px;
+      img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      img:active{
+        transform: scale(0.75);
+      }
+      .frist{
+        display: flex;
+        position: absolute; 
+         bottom: 5px;
+         right: 5px;
+        }
+      .last{
+        display: flex;
+       position: absolute;
+       bottom: 5px;
+       right: 5px;
+       align-items: center;
+       gap: 10px;
+       padding: 6px;
+       border-radius: 50px;
+       background-color: white;
+
+      }
+    }
+    .cartitem-details{
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+      height: 40%;  
+      padding-left:10px ;
+      .name{
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 2px;
+      }
+      .description{
+        font-size: 13px;
+        color: rgb(71, 74, 77);
+      }
+      .price{
+        display: flex;
+        position: absolute;
+        font-size: 25px;
+        color: rgb(219, 143, 0);
+        top:85px;
+      }
+    }
+}
+.carditem:hover{
+ transform: scale(1.05);
+ transition:transform 0.4s;
+}
+
+@media screen and (max-width:850px) {
+  .carditem{
+    width: 180px;
+    .cartitem-details{
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+      height: 40%;  
+      padding-left:10px ;
+      .name{
+        font-size: 18px;
+      }
+      .description{
+        display: flex;
+        height: 35px;
+        overflow-y: scroll;
+    
+      }
+    }
+  }
+}

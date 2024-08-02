@@ -1,0 +1,29 @@
+.headerMeals-page{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;    
+.products-container{
+    display: grid;
+    grid-template-columns: repeat(4, 0.2fr);
+    column-gap: 5px;
+}
+.products-title{
+    font-size: 38px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: orangered;
+}
+}
+@media screen and (max-width:760px) {
+    .headerMeals-page{
+        margin-bottom: 80px;   
+        .products-container{
+        display: grid;
+        grid-template-columns: repeat(2, 0.2fr);
+        column-gap: 5px;
+    }
+}
+}

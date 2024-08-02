@@ -1,0 +1,21 @@
+.orderList-page{
+    display: flex;
+    position: absolute;
+    left: 22%;
+    width: 70%;
+    bottom: 8%;
+    flex-direction: column;
+    .header{
+        display: flex;
+        position: relative;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .body{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        height: 500px;
+        overflow-y: scroll;
+    }
+}

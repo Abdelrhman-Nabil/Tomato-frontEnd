@@ -1,0 +1,42 @@
+.viewOrder{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 8px 0;
+    flex-direction: row;
+    border: 1px solid black;
+    .frist-part{
+        display: flex;
+        position: relative;
+        width: 15%;
+        height: 100%;
+        justify-content: center;
+    }
+    .second-part{
+        display: flex;
+        position: relative;
+        width: 35%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .third-part{
+        display: flex;
+        position: relative;
+        width: 15%;
+        justify-content: center;
+    }
+    .forth-part{
+        display: flex;
+        position: relative;
+        width: 15%;
+        justify-content: center;
+    }
+    .fifth-part{
+        display: flex;
+        position: relative;
+        width: 20%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

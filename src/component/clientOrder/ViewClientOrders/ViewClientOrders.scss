@@ -1,0 +1,16 @@
+.viewOrder{
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+    flex-direction: row;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    .fifth-part1{
+        display: flex;
+        position: relative;
+        width: 20%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

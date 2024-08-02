@@ -1,0 +1,123 @@
+.checkout-container {
+  display: flex;
+  position: relative;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  left: 15%;
+}
+
+.checkout-header {
+  width: 90%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.f4{
+  position: relative;
+  left: 50px;
+}
+.f5{
+  position: relative;
+  left: 100px;
+}
+.header-block {
+  text-transform: capitalize;
+  color: rgb(0, 0, 0);
+}
+.emptyCheckOut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-container-items{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 50px;
+  overflow-y: scroll;
+}
+
+.cartTotal{
+  display: flex;
+  position: relative;
+  width: 600px;
+  margin-left: 50px;
+  left: 15%;
+  background-color: transparent; 
+  flex-direction: column;
+ .element{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  font-size: 25px;
+  border-bottom: 1px solid silver;
+  padding: 10px;
+ .total1{
+  font-weight: 600;
+ }
+ }
+ .top{
+  margin-top: 5px;
+ }
+ .bottom{
+  margin-bottom: 5px;
+ }
+ .checkOut-button{
+  width: 200px;
+  margin: 5px;
+  background-color: orangered;
+ }
+ .checkOut-button:hover{
+  color: orangered;
+  background-color: white;
+ }
+ .disabled .checkOut-button{
+  background-color: black;
+  opacity: 0.1;
+  cursor:not-allowed;
+  
+ }
+ .disabled .checkOut-button:hover{
+   background-color: black;
+ }
+}
+@media screen  and (max-width:450px){
+  .checkout-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0;
+    width: 55%;
+    left: -1px;
+  }
+  .checkout-header {
+    width: 158%;
+    .f4{
+      position: relative;
+      left: 0px;
+    }
+    .f5{
+      position: relative;
+      left: 0;
+    }
+  }
+  .checkout-container-items{
+    display: flex;
+    height: 100px;
+    overflow-y: unset;
+  }
+  .cartTotal{
+    display: flex;
+    position: relative;
+    width: 300px;
+    margin-left: 0px;
+    left: 50px;
+    background-color: transparent;
+    flex-direction: column;
+    margin-bottom: 500px;
+  }
+}

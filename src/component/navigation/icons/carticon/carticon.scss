@@ -1,0 +1,29 @@
+.CartIconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ItemCount {
+  display: flex;
+  position: absolute;
+  font-size: 15px;
+  bottom: 0px;
+  left: 30%;
+  color: white;
+}
+.ItemCount1 {
+  display: flex;
+  position: absolute;
+  font-size: 15px;
+  bottom: 0px;
+  left: 20%;
+  color: white;
+}
+
+.ShoppingSvg {
+  width: 24px;
+  height: 24px;
+}
