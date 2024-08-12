@@ -3,7 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    background-image: url("../../assets/photo1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .frist-part {
         display: flex;
@@ -11,6 +14,7 @@
         width: 75%;
         height: 500px;
         margin-bottom: 30px;
+        margin-top: 25px;
         justify-content: center;
 
         .text {
@@ -45,7 +49,7 @@
             object-fit: cover;
         }
 
-        .button {
+        .home-button  {
             display: flex;
             position: relative;
             height: 70px;
@@ -82,11 +86,14 @@
         .title {
             font-size: 30px;
             margin-bottom: 10px;
+            color: white;
         }
 
         .sub-title {
             width: 65%;
             margin-bottom: 5px;
+            color: white;
+
         }
 
     }
@@ -103,6 +110,7 @@
             position: relative;
             font-size: 35px;
             z-index: 2;
+            color: orangered;
         }
     }
 
@@ -113,6 +121,7 @@
         height: 360px;
         font-size: 50px;
         flex-direction: column;
+        color: white;
 
         .text {
             display: flex;
@@ -265,7 +274,7 @@
 
             }
 
-            .button {
+            .home-button {
                 .view-button {
                     color: black;
                     height: 100%;
@@ -292,7 +301,7 @@
 
         .fifth-part {
 
-            width: 434px;
+            width: 481px;
             height: 387px;
             margin-bottom: 159px;
 

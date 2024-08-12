@@ -8,7 +8,7 @@ const ProudctsListItem=({product})=>{
 
     const navigate = useNavigate();
     const submitHandler=()=>{ 
-      navigate(`/Add/editProduct`,{state:product})
+      navigate(`/AdminPanel/editProduct`,{state:product})
     }
     return(
       <Fragment>

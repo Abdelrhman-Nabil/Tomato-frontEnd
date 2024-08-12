@@ -24,15 +24,8 @@
             flex-direction: column;
             width:500px;
             height: 100%;
-            margin-left: 22px;
+            margin-left: 1%;
             margin-bottom: 150px;
-            .fristLine{
-                display:flex;
-                position: relative;
-                width: 100%;
-                justify-content: space-evenly;
-                left: -13px;
-
                 input{
                     display: flex;
                     position: relative;
@@ -43,7 +36,7 @@
                     margin: 10px 1px;
                 }
                 
-            }
+            
             .secondLine{
                 display: flex;
                 position: relative;
@@ -61,18 +54,12 @@
 
                 }
             }
-            .checkOut-button{
-                position: fixed;
-                width: 200px;
-                margin: 5px;
-                left: 50%;
-                bottom: 165px;
-                background-color: orangered;
-               }
-               .checkOut-button:hover{
-                color: orangered;
-                background-color: white;
-               }
+            .pay-button{ button{
+                display: flex;
+                position: relative; 
+                left: 610px;
+                z-index: 6;
+            }}
 
         }
     }
@@ -104,25 +91,7 @@
        .bottom{
         margin-bottom: 5px;
        }
-       .checkOut-button{
-        position: absolute;
-        width: 200px;
-        margin: 5px;
-        background-color: orangered;
-       }
-       .checkOut-button:hover{
-        color: orangered;
-        background-color: white;
-       }
-       .disabled .checkOut-button{
-        background-color: black;
-        opacity: 0.1;
-        cursor:not-allowed;
-        
-       }
-       .disabled .checkOut-button:hover{
-         background-color: black;
-       }
+       
       }
 }
 
@@ -130,12 +99,16 @@
 
     .pamentForm {
         flex-direction: column;
+        left: 10%;
+        width: 80%;
+        margin-bottom: 550px;
         .delevery-Information {
             height: 370px;
-            width: 71%;
+            width: 100%;
             top: 0;
+            left: 0;
             .paymentForm {
-                width: 340px;
+                width: 50%  ;
                 .fristLine{
                  justify-content:start;
                  left: 18px;
@@ -148,11 +121,14 @@
                         width:300px;
                     }
                 }
-                .checkOut-button {
-                 position: relative;
-                    top:80%;
-                     left: 0%;
+                .pay-button{ button{
+                    display: flex;
+                    position: relative; 
+                   left: 25px;
+                   z-index: 6;
+                   top: 350px;
                 }
+            }
             }
         }
         .cartTotal1{

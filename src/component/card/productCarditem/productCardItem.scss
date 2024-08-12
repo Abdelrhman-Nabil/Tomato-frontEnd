@@ -75,18 +75,18 @@
       .name{
         font-size: 20px;
         font-weight: bold;
-        color: black;
+        color: rgb(255, 255, 255);
         margin-bottom: 2px;
       }
       .description{
         font-size: 13px;
-        color: rgb(71, 74, 77);
+        color: rgb(209, 209, 209);
       }
       .price{
         display: flex;
         position: absolute;
         font-size: 25px;
-        color: rgb(219, 143, 0);
+        color: rgb(251, 255, 3);
         top:85px;
       }
     }

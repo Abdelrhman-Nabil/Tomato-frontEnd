@@ -3,6 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url("../../assets/wallpaperflare.com_wallpaper (5).jpg");
+    background-position:random($limit: 2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 
     .navbar{
         display: flex;
@@ -36,30 +41,21 @@
         height: 70px;
         justify-content: center;
         align-items: center;
-        left: 67%;
+        left: 65%;
          .seacrch-icon{
             margin-right: 15px;
          }
          .cart-icon{
-            margin-right: 0px;
+            margin-right: 10px;
+
          }
         .seacrch-icon:hover,.cart-icon:hover{
             opacity: 0.3;
         }
-        .login-button{
+        .loginButton{
             display: flex;
             position: relative;
-            width: 70%;
-            height: 70%;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 20px;
-            border: 1px solid orangered;
-            text-decoration: none;
-            cursor: pointer;
-            margin-left: 15px;
-
+            bottom:5px
         }
     }
 
@@ -103,7 +99,7 @@
             font-size: 35px;
             color: orangered;
             position: relative;
-            left: 50px;
+            left: 25px;
         }
            .nav-menu{
             display: none;
@@ -123,14 +119,6 @@
         
             .seacrch-icon:hover,.cart-icon:hover{
                 opacity: 0.3;
-            }
-            .login-button{
-                font-size: 22px;
-                height:80%;
-                width: 100%;
-                // border-radius: 35px;
-                cursor: pointer;
-                border: 0.1px solid orangered;
             }
            }
 

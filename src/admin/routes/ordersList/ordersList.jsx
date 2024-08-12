@@ -1,42 +1,42 @@
+import { Fragment, useContext,useEffect,useState } from 'react'
 import ViewOrders from '../../components/orders/viewOrder/viewOrder'
+import { useHttpClinet } from "../../../utils/hooks/httpHook";
+import {CartContext} from '../../../context/cartContext'
+import BackDrop from "../../../component/others/backDrop/backDrop";
+import ErrorModal from "../../../component/others/models/error/errorModel";
+import LoadingSpinner from "../../../component/others/loadingSpinner/loadingSpinner";
 import './ordersList.scss'
 const OrderList=()=>{
-    const orders=[{
-        title:"greek salad",
-        quaitity:2,
-        total:35,
-        address:"sssssssssssssssssssss",
-        phoneNumber:"0505",
-        name:"boka nabil"
-    },{
-        title:"greek salad",
-        quaitity:3,
-        total:39,
-        address:"aaaaaaaaaaa",
-        phoneNumber:"050522",
-        name:"boka nabil"
+const [orders,setOrders]=useState('')
+  const{setTotalOrder}=useContext(CartContext)
 
-    },
-    {
-        title:"greek salad",
-        quaitity:2,
-        total:35,
-        address:"sssssssssssssssssssss",
-        phoneNumber:"0505",
-        name:"boka nabil"
-    }
-]
+  const{sendRequest,isLoading,error,clearError}=useHttpClinet()
+
+  useEffect(()=>{
+    const fetchOrder=async ()=>{
+      const responseData=await sendRequest('http://localhost:5000/api/order/getOrders')
+       setOrders(responseData.orders)
+       setTotalOrder(responseData.orders.length)
+      }
+    fetchOrder()
+  },[sendRequest,setTotalOrder])
+
 return(
+    <Fragment>
+    {error && <BackDrop />} 
+    {error && <ErrorModal data={error} onClick={clearError} />}
     <div className='orderList-page'>
+    {isLoading &&<LoadingSpinner/>}
     <span className='header'>Orders List</span>
      <div className='body'>
-     {orders.map((order)=>{
+     {orders&&orders.map((order)=>{
         return(
          <ViewOrders data={order}/>
         )
        })}
      </div>
     </div>
+    </Fragment>
 )
 }
 export default OrderList

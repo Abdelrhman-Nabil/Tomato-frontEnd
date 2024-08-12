@@ -5,7 +5,7 @@ import plus2 from "../../../assets/b3.png"
 import minus from '../../../assets/b2.png';
 import { CartContext } from '../../../context/cartContext';
 const ProductCardItem=({data})=>{
-    const {id,name,price,imageUrl,description}=data;
+    const {id,title,price,image,details}=data;
     const {addItemsToCart,removeItemFromCart,cartItems}=useContext(CartContext);
     const product=cartItems.find((item)=>item.id===id)
 
@@ -14,7 +14,7 @@ const ProductCardItem=({data})=>{
     return (
       <div className="carditem">
         <div className="carditem-img">
-          <img src={imageUrl} alt={name} />
+          <img src={`http://localhost:5000/${image}`} alt={title} />
         </div>
         <div className="operations">
           {!product ? (
@@ -41,8 +41,8 @@ const ProductCardItem=({data})=>{
           </div>}
         </div>
         <div className="cartitem-details">
-          <span className="name">{name}</span>
-          <span className="description">{description}</span>
+          <span className="name">{title}</span>
+          <span className="description">{details}</span>
           <span className="price">{price} $</span>
         </div>
       </div>

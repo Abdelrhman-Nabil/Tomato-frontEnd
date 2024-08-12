@@ -1,10 +1,22 @@
-import { Fragment,useState } from "react";
+import { Fragment,useEffect,useState } from "react";
 import AddAddmins from "../../components/adminsPage/addAdmin/addAdmin";
 import ViewAdmins from "../../components/adminsPage/viewAdmin/viewAdmin";
 import "./adminPage.scss";
+import { useHttpClinet } from "../../../utils/hooks/httpHook";
 const AdminPage = () => {
-//   const[addminsList,setAddminsList]=useState('')
-  const addminsList=["aen_2012@live.com","boka@google.com"]
+  const[addminsList,setAddminsList]=useState('')
+  const{sendRequest}=useHttpClinet()
+
+  useEffect(()=>{
+  const fetchAddmin=async()=>{
+    try{
+      const addminsList=await sendRequest( 'http://localhost:5000/api/admins/getAddminEmails')
+    setAddminsList(addminsList.addminEmails)
+    }catch(err){}
+  }
+  fetchAddmin();
+ },[sendRequest])
+ console.log(addminsList)
   return (
     <Fragment>
       <div className="addminPage-body">
@@ -13,12 +25,11 @@ const AdminPage = () => {
               <div className="view-email-header">
               <h3>Email List</h3>
               </div>
-              {addminsList.map((addminEmail)=>{
+              {addminsList&&addminsList.map((addminEmail)=>{
                 return(
             <ViewAdmins   list={addminEmail}/>
                 )
-         })} 
-          </div>
+         })}           </div>
       </div>
     </Fragment>
   );

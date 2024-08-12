@@ -1,9 +1,11 @@
 import ProductCard from "../../component/card/productCard/productCard";
 import Circles from "../../component/home/Circles/Circles";
-import { useContext} from "react";
+import { useContext, useEffect, useState} from "react";
 import { MealContext } from "../../context/mealsContext";
 import "./home.scss"
 import { Link } from "react-router-dom";
+import { useHttpClinet } from "../../utils/hooks/httpHook";
+import { CartContext } from "../../context/cartContext";
 const Home=()=>{
   const circleData=[{
     id:1,
@@ -46,16 +48,44 @@ const Home=()=>{
   imageUrl:"https://images.unsplash.com/photo-1613564834361-9436948817d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBpenphfGVufDB8fDB8fHww"
 }
 ]
-const {mealMap,selected}=useContext(MealContext)
-const data=mealMap.filter(item=>item.category===selected)
+const [loadedProduct, setLoadedProduct] = useState();
 
+const { error, isLoading, clearError, sendRequest } = useHttpClinet();
+
+
+useEffect(() => {
+  
+  const fetchUsers = async () => {
+    try {
+      const responseDataProduct = await sendRequest(
+        "http://localhost:5000/api/products/allProduct"
+      );
+
+      if (responseDataProduct) {
+        setLoadedProduct(responseDataProduct.products);
+      }
+
+    } catch (err) {}
+  };
+  fetchUsers();
+
+}, [sendRequest]);
+
+const {selected}=useContext(CartContext)
+const {setMealMap}=useContext(MealContext)
+setMealMap(loadedProduct)
+let data,homeData;
+if(loadedProduct){
+  data=loadedProduct.filter(item=>item.category===selected)
+  homeData=data.slice(0,4)
+}
 return(
        <div className="home-page">
         <div className="frist-part">
         <div className="text">
         <span className="title">Order Your<br/> Favorite food here </span>
         <span className="sub-title">Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time</span>
-        <div className='button'>
+        <div className='home-button '>
         <button className='view-button'><Link className='view-button' to={"/meals"}>View Menu</Link></button>
         </div>
         </div>
@@ -71,7 +101,7 @@ return(
         <div className="third-part">
           <span className="header">Top dishes near You</span>
         
-          <ProductCard data={data}/> 
+          <ProductCard data={homeData}/> 
         </div>
         <div className="forth-part">
            <div className="text">

@@ -28,10 +28,11 @@ const ProductsPage = () => {
   console.log(loadedProducts);
   return (
     <Fragment>
-    {isLoading &&<LoadingSpinner/>}
     {error && <BackDrop />} 
     {error && <ErrorModal data={error} onClick={clearError} />}
       <div className="product-page">
+      {isLoading &&<LoadingSpinner/>}
+
         <div className="product-page-header">
           <Button
             onClick={() => {

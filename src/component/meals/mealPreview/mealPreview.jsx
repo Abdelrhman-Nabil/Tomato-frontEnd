@@ -8,7 +8,7 @@ const MealPreview = ({ categories, products }) => {
       {categories.map((item) => (
         <div>
           <h2>
-            <Link className="title" to={item}>
+            <Link className="title" to={item} >
               {item.toUpperCase()}
             </Link>
           </h2>

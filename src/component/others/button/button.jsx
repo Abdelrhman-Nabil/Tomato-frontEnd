@@ -1,21 +1,42 @@
-import './button.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const BUTTON_TYPE_CLASSES = {
-  google: 'google-sign-in',
-  inverted: 'inverted',
-};
-
-const Button = ({ children, buttonType, ...otherProps }) => {
+import './button.css'
+const Button = props => {
+  if (props.href) {
+    return (
+      <a
+        className={`button button--${props.size || 'default'} ${props.inverse &&
+          'button--inverse'} ${props.danger && 'button--danger'}`}
+        href={props.href}
+      >
+        {props.children}
+      </a>
+    );
+  }
+  if (props.to) {
+    return (
+      <Link
+        to={props.to}
+        exact={props.exact}
+        className={`button button--${props.size || 'default'} ${props.inverse &&
+          'button--inverse'} ${props.danger && 'button--danger'}`}
+      >
+        {props.children}
+      </Link>
+    );
+  }
   return (
     <button
-     className={`${otherProps.disable=== true ? "disabled" : `button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}`}
-      {...otherProps}
+      className={`button button--${props.size || 'default'} ${props.inverse &&
+        'button--inverse'} ${props.danger && 'button--danger'}`}
+      type={props.type}
+      onClick={props.onClick}
+      disabled={props.disabled}
     >
-      {children}
+      {props.children}
     </button>
   );
 };
 
 export default Button;
-
-// className={`${otherProps.disabled===true?"disabled":`button-container ${BUTTON_TYPE_CLASSES[buttonType]`}}`}

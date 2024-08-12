@@ -4,10 +4,13 @@ import { useForm } from "../../../../utils/hooks/useForm";
 import Button from "../../../../component/others/button/button";
 import Input from "../../../../component/others/input/input";
 import { useNavigate } from "react-router-dom";
+import { useHttpClinet } from "../../../../utils/hooks/httpHook";
 import "./addAdmin.scss";
 
 const AddAddmins = () => {
   const navigate = useNavigate();
+  const{sendRequest}=useHttpClinet()
+
   const [formState, inputHandler] = useForm(
     {
       email: {
@@ -18,7 +21,20 @@ const AddAddmins = () => {
     false
   );
 
-  const addminSubmitHandler = async (event) => {};
+  const addminSubmitHandler = async (event) => {
+    try{
+      await sendRequest( "http://localhost:5000/api/admins/","POST",JSON.stringify({
+        email:formState.inputs.email.value,
+        time:new Date(),
+      }),{
+        'Content-Type':"application/json"
+      })
+      navigate("/AdminPanel/AdminPage")
+
+    }catch(err){}
+  
+
+  };
   return (
     <Fragment>
       <div className="addAdmins-data">

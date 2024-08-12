@@ -14,9 +14,6 @@ const AdminPanel = () => {
             <span className="title">Tomato.</span>
             <span className="subTitle">AdminPanel</span>
           </div>
-          <div className="adminData">
-            <span>name</span>
-          </div>
         </div>
         <div className="sideBar">
           <div className="actions">

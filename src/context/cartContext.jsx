@@ -29,7 +29,8 @@ export const CartContext=createContext({
     removeItemFromCart:()=>{},
     IsAccoutCartOpen: false,
     setIsAccoutCartOpen: () => {},
-
+    selected:"",
+    setSelected:()=>{}
 })
 
 
@@ -38,6 +39,9 @@ export const CartProvider=({children})=>{
     const [cartCount, setCartCount] = useState(0);
     const [cartTotal, setCartTotal]=useState(0);
     const [IsAccoutCartOpen, setIsAccoutCartOpen] = useState(false)
+    const [selected,setSelected]=useState("Salad")
+    const [totalOrder,setTotalOrder]=useState(0)
+
 
     const addItemsToCart=(productToAdd)=>{
         setCartItems(addCardItem(cartItems,productToAdd))
@@ -62,7 +66,7 @@ export const CartProvider=({children})=>{
       },[cartItems]);
 
     const value={cartItems,setCartItems,addItemsToCart,cartCount,removeItemFromCart,clearItemFromCart,cartTotal,IsAccoutCartOpen,setIsAccoutCartOpen,
-   }
+      selected,setSelected,totalOrder,setTotalOrder}
     return (
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )

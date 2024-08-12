@@ -3,6 +3,8 @@ import {createContext, useCallback, useEffect, useState } from "react";
 export const AuthContext=createContext({
     isLoggedIn: false,
     logIn:()=>{},
+    userId:null,
+    token:null,
     logOut:()=>{},
     authIsOpen:false,
     setAuthIsOpen:()=>{}
@@ -12,8 +14,8 @@ export const AuthProvider=({children})=>{
     const[token,setToken]=useState(false)
     const[userId,setUserId]=useState(null)
     const[tokenExpirationDate,setTokenExpirationDate]=useState();
-  
-   const logIn=useCallback((uid,token,expirationData)=>{
+
+    const logIn=useCallback((uid,token,expirationData)=>{
     setToken(token)
     const tokenExpirationDate= expirationData || new Date(new Date().getTime() + 1000 *60 * 60 )
     setTokenExpirationDate(tokenExpirationDate)

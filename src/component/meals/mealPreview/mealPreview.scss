@@ -5,6 +5,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    background-image: url("../../../assets/photo1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   
     .title {
       font-size: 28px;
@@ -12,6 +16,10 @@
       cursor: pointer;
       text-decoration: none;
       color: orangered;
+    }
+    .title:hover{
+      transform: scale(0.95);
+      color: orange;
     }
    h2{
     display: flex;

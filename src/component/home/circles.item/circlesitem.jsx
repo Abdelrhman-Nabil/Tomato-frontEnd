@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { MealContext } from '../../../context/mealsContext'
+import { CartContext } from '../../../context/cartContext'
 import  './circlesitem.scss'
 const CirclesItem=({data})=>{
-    const {selected,setSelected}=useContext(MealContext)
+    const {selected,setSelected}=useContext(CartContext)
    const{name,imageUrl}=data
    const filterHandler=()=>{
     setSelected(data.name)

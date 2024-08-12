@@ -23,7 +23,6 @@ const UserDropDown = () => {
     <div className="UserDropdownContainer">
       <div className="accountItems">
       <button  className="second-button" onClick={orderDataHandler} >Order</button>
-      <button  className="second-button" onClick={orderDataHandler} >wishlist</button>
       <button className="thired-button" onClick={logOutHandler}>log out</button>
       </div>
     </div>

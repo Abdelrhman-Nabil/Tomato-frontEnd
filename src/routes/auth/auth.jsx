@@ -95,25 +95,17 @@ const Auth = () => {
 
       
     }
-    // if(formState.inputs.email.value === "aen_2012@live.com"){
-    //   logIn()
-    //   navigate('/AdminPanel/DashBoard')
 
-    // }else{
-    //   logIn()
-    //   navigate('/')
-
-    // } 
   }
     return (
       <Fragment>
       {error && <BackDrop />}
-      {error && <ErrorModal data={error} onClick={clearError} />}
+      {error && <ErrorModal data={error} onClick={clearError} />}   
 
       {isLoading && <LoadingSpinner asOverlay />}
 
         <div className="auth-page">
-          <div className='auth'>
+          <div className={`auth ${isLoginMode?"login":"signUp"}`} >
             <form className="form" onSubmit={authSubmitHandler}>
               {isLoginMode ? (
                 <span className="header">Login</span>
@@ -162,9 +154,7 @@ const Auth = () => {
                 />
               )}
               <div className="buttons-container">
-                <Button type="submit" disabled={!formState.isValid}>
-                  {isLoginMode ? "Sign In" : "Create an account"}
-                </Button>
+              <Button inverse type="submit" disabled={!formState.isValid}>{isLoginMode ? "LOGIN" : "SIGNUP"}</Button>
               </div>
             </form>
             <div className="switchButton">

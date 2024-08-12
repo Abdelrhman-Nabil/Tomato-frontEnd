@@ -9,10 +9,10 @@ import Button from "../../../../component/others/button/button";
 import ImageUploadAuth from "../../../../component/others/imageUpload/imageUpload";
 import "./addProducts.css";
 const AddProduct = () => {
+  const {token} =useContext(AuthContext)
     const navigate=useNavigate();
-    const{token}=useContext(AuthContext)
     const [category,setCategory]=useState('')
-    const {isLoading,error,sendRequest,clearError}=useHttpClinet()
+    const {sendRequest}=useHttpClinet()
 
   const [formState, inputHandler] = useForm(
     {
@@ -49,10 +49,11 @@ const AddProduct = () => {
       formData.append("price",formState.inputs.price.value)
       formData.append("image",formState.inputs.image.value)
       formData.append("category",category);
-      await sendRequest('http://localhost:5000/api/products/',"POST",formData) 
+      await sendRequest('http://localhost:5000/api/products/',"POST",formData,{
+        authorization:'Bearer '+ token
+      }) 
     }catch(err){}
      navigate('/AdminPanel/Products')
-
 };
 
   return (
@@ -85,7 +86,7 @@ const AddProduct = () => {
                 onInput={inputHandler}
               />
               <div className="select">
-              <label className="label" for="pet-select">Choose a Categories:</label>
+              <label className="label" for="pet-select">Categories</label>
               <select name="Categories" id="categories-select" onChange={CategoryHandler}>
                 <option value="">--Please choose an option--</option>
                 <option value="Salad">Salad</option>

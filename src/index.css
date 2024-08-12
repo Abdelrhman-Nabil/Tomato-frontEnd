@@ -18,7 +18,9 @@ code {
 *{
   box-sizing: border-box;
 }
-
+@keyframes mymove {
+  50% {background-position: center;}
+}
 @keyframes fadeIn{
   0%{
       opacity: 0;

@@ -1,21 +1,44 @@
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext, useEffect, useState } from 'react'
 import MealPreview from '../mealPreview/mealPreview'
 import { MealContext } from '../../../context/mealsContext'
 import './mealPage.scss'
+import { useHttpClinet } from '../../../utils/hooks/httpHook'
 const MealPage=()=>{
-    const {mealMap}=useContext(MealContext);
+    const [loadedProduct, setLoadedProduct] = useState();
 
+    const { error, isLoading, clearError, sendRequest } = useHttpClinet();
+    
+    
+    useEffect(() => {
+      
+      const fetchUsers = async () => {
+        try {
+          const responseDataProduct = await sendRequest(
+            "http://localhost:5000/api/products/allProduct"
+          );
+    
+          if (responseDataProduct) {
+            setLoadedProduct(responseDataProduct.products);
+          }
+    
+        } catch (err) {}
+      };
+      fetchUsers();
+    
+    }, [sendRequest]);
         let categories = [];
-        const  category=mealMap.map((item=>item.category))
-        category.forEach(element => {
+        let category
+        if(loadedProduct){
+        category=loadedProduct.map((item=>item.category))
+        }
+        category&&category.forEach(element => {
                 if (!categories.includes(element)) {
                     categories.push(element);
                 }
             });
-          console.log(categories)
     return(
         <Fragment>
-            <MealPreview  categories={categories} products={mealMap} />
+            <MealPreview  categories={categories} products={loadedProduct} />
         </Fragment>
     )
 }

@@ -13,8 +13,7 @@
   left: 10px;
 }
 
-.form-control input,
-.form-control textarea {
+.form-control input{
   display: flex;
   position: relative;
   border-radius: 9px;
@@ -26,6 +25,16 @@
   padding: 0.15rem 0.25rem;
 }
 
+.form-control textarea {
+  display: flex;
+  position: relative;
+  border-radius: 9px;
+  width: 100%;
+  height: 35px;
+  font: inherit;
+  background: #f8f8f8;
+  padding: 0.15rem 0.25rem;
+}
 .form-control input:focus,
 .form-control textarea:focus {
   outline: none;

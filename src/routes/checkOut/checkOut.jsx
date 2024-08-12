@@ -5,14 +5,20 @@ import { CartContext } from "../../context/cartContext";
 import CheckoutItem from "../../component/checkOutItem/checkOutItem";
 import "./checkOut.scss";
 import BackDrop from "../../component/others/backDrop/backDrop";
+import AlartModal from "../../component/others/models/alert/alert";
+
 import Button from "../../component/others/button/button";
 const CheckOut = () => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  const {isLoggedIn}=useContext(AuthContext)
   const { cartItems, cartTotal } = useContext(CartContext);
   const PaymentHandler=()=>{
+    if(isLoggedIn){
     navigate('/PaymentForm');
-
+    }else{
+      setShowModal(true)
+    }
 
   }
   return (
@@ -24,6 +30,8 @@ const CheckOut = () => {
           }}
         />
       )}
+      {showModal &&(<AlartModal data={'Should Log in Frist '} onClick={() => {setShowModal(false);}} nav={"/auth"}/>)}
+  
 
       <div className="checkout-container">
         <div className="checkout-header">
@@ -67,14 +75,9 @@ const CheckOut = () => {
           <span className="total1">Total</span>
           <span>${cartTotal + 5}</span>
         </div>
-        <Button
-          className=" button-container checkOut-button"
-          buttonType="inverted"
-          disabled={cartItems.length === 0}
-          onClick={PaymentHandler}
-        >
-          Proceed To CheckOut
-          </Button>
+           <div>
+          <Button inverse onClick={PaymentHandler} disabled={cartItems.length === 0}>Proceed To CheckOut</Button>
+          </div>
       </div>
 
     </Fragment>

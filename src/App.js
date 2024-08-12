@@ -6,20 +6,24 @@ import CheckOut from "./routes/checkOut/checkOut";
 import SearchPage from "./routes/searchPage/searchPage";
 import Auth from "./routes/auth/auth";
 import PaymentForm from "./routes/PaymentForm/paymentFOrm"; 
+import CkeckOutSuccess from "./component/others/models/checkOutSuccess/checkOutSuccess";
+import ClientOrder from "./routes/clientOrders/clientOrders";
+
+
 import AdminPanel from "./admin/routes/adminPanel/adminPanel";
 import DashBoard from "./admin/routes/dashBoard/dashBoard";
 import ProductsPage from "./admin/routes/products/products";
 import AddProduct from "./admin/components/products/addProudcts/addProducts";
 import OrderList from "./admin/routes/ordersList/ordersList";
 import AdminPage from "./admin/routes/adminPage/adminPage";
-import ClientOrder from "./routes/clientOrders/clientOrders";
+import EditProduct from "./admin/components/products/editProducts/editProduct";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./context/authContext";
 import { CartContext } from "./context/cartContext";
 const App = () => {
   const {logIn}=useContext(AuthContext);
   const {setCartItems}=useContext(CartContext);
-  const {state,setState}=useState('')
+
 
   useEffect(()=>{
     const storeData=JSON.parse(localStorage.getItem('userData'));
@@ -42,11 +46,14 @@ const App = () => {
           <Route path="SearchPage" element={<SearchPage />} />
           <Route path="PaymentForm" element={<PaymentForm />} />
           <Route path="Myorders" element={<ClientOrder />} />
+          <Route path="CkeckOutSuccess" element={<CkeckOutSuccess />} />
+          
         </Route>
         <Route path="/AdminPanel" element={<AdminPanel/>}>
         <Route path="dashBoard" element={<DashBoard/>}/>
         <Route path="Products" element={<ProductsPage/>}/>
         <Route path="addProduct" element={<AddProduct/>}/>
+        <Route path="editProduct" element={<EditProduct/>}/>
         <Route path="orderList" element={<OrderList/>}/>
         <Route path="AdminPage" element={<AdminPage/>}/>
         </Route>

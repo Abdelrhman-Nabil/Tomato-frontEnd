@@ -66,24 +66,13 @@
  .bottom{
   margin-bottom: 5px;
  }
- .checkOut-button{
-  width: 200px;
-  margin: 5px;
-  background-color: orangered;
- }
- .checkOut-button:hover{
-  color: orangered;
-  background-color: white;
- }
- .disabled .checkOut-button{
-  background-color: black;
-  opacity: 0.1;
-  cursor:not-allowed;
-  
- }
- .disabled .checkOut-button:hover{
-   background-color: black;
- }
+ .pay-button{ button{
+  display: flex;
+  position: relative; 
+ left: 100px;
+ z-index: 6;
+}
+}
 }
 @media screen  and (max-width:450px){
   .checkout-container {

@@ -1,46 +1,65 @@
 .addProduct-page{
     display: flex;
-    position: absolute;
-    left: 25%;
+    position: relative;
     width: 50%;
-    background-color: rgba(238, 238, 238, 0.603);
-    box-shadow: 0 5px 5px 0 #000;
-    top: 14%;
+    left: 20%;
     flex-direction: column;
+    bottom: 565px;
 }
 .addProduct-page-header{
     display: flex;
     position: relative;
-    font-size: 35px;
+    width: 25%;
+    margin-bottom: 15px;
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 12px;
-    left: 10%;
+    left: 15%;
 }
 .add-product-data{
     display: flex;
     position: relative;
+    width: 70%;
     justify-content: center;
-    width: 100%;
+    left: 20%;
+    bottom: 12px;
+    box-shadow: 0px 0.4px 0px 0.5px black ;
 
 }
-.add-product-data button{
+.add-product-data form{
     display: flex;
     position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    left: 25%;
+    flex-direction: column;
+    width: 70%;
 }
+
 .select{
     display: flex;
     position: relative;
     flex-direction: column;
+    height: 35px;
 }
-select{
-    height: 30px;
+.select select{
+    height: 350px;
 }
 .label{
     display: flex;
-    /* font-size: 22px; */
+    position: relative;
+    font-size: 15px;
     font-weight: bold;
 }
-
+@media screen and (max-width:850px) {
+    .addProduct-page{
+        left: 37%;
+        bottom: 585px;
+    }
+    .add-product-data{
+        left: 3%;
+        width: 100%;
+    }
+    .add-product-data form{
+        display: flex;
+        position: relative;
+        width: 80%;
+        flex-direction: column;
+    }
+}
