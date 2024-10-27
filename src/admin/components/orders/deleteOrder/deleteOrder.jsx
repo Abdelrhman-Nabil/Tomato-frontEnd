@@ -9,7 +9,7 @@ const DeleteOrder=({onClick,id})=>{
   const { error,clearError,isLoading,sendRequest} = useHttpClinet();
   const deleteHandler=async()=>{
     try{
-         await sendRequest(`http://localhost:5000/api/order/${id}`,'DELETE')
+         await sendRequest(process.env.REACT_APP_BACKEND_URL+`/api/order/${id}`,'DELETE')
     }
     catch(error){}
   }

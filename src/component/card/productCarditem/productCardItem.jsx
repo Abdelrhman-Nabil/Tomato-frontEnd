@@ -4,17 +4,26 @@ import plus1 from '../../../assets/b1.png';
 import plus2 from "../../../assets/b3.png"
 import minus from '../../../assets/b2.png';
 import { CartContext } from '../../../context/cartContext';
+import { toast } from "react-toastify";
+
 const ProductCardItem=({data})=>{
     const {id,title,price,image,details}=data;
     const {addItemsToCart,removeItemFromCart,cartItems}=useContext(CartContext);
     const product=cartItems.find((item)=>item.id===id)
 
-    const addProductToCart=()=>{addItemsToCart(data)}
-    const removeItemCart=()=>{removeItemFromCart(data)}
+    const addProductToCart=()=>{
+      addItemsToCart(data)
+      toast(`${title} add To Cart`);
+
+    }
+    const removeItemCart=()=>{
+      removeItemFromCart(data)
+      toast(`${title} remove from Cart`);
+    }
     return (
       <div className="carditem">
         <div className="carditem-img">
-          <img src={`http://localhost:5000/${image}`} alt={title} />
+          <img src={`${process.env.REACT_APP_BACKEND_URL}/${image}`} alt={title} />
         </div>
         <div className="operations">
           {!product ? (

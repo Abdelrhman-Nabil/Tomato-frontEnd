@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     // margin-bottom: 100px;
-    height: 642px;
+    height: 720px;
     top: 10%;
     background-image: url("../../assets/wallpaperflare.com_wallpaper (5).jpg");
     background-position: center;
@@ -15,29 +15,30 @@
         position: relative;
         width: 30%;
         height: 350px;
-        top: 30px;
+        top: -80px;
     }
     .signUp{
         display: flex;
         position: relative;
+        justify-content: center;
         width: 30%;
-        height: 550px;
-        top: 30px;
+        height: 530px;
+        top: -80px;
     }
     .auth{
         display: flex;
         background-color: rgb(248, 226, 226);
         box-shadow:  1px 5px 3px 1px black;
-        flex-direction: column;
         margin-bottom: 25px;
         border-radius: 15px;
         justify-content: center;
+        flex-direction: column;
         .header{
             display: flex;
             position: relative;
             height: 25%;
             width: 25%;
-            // margin-top: 33px;
+            margin-top: 33px;
             margin-bottom: 15px;
             font-size: 22px;
             font-weight: bold;
@@ -63,8 +64,8 @@
             position: relative;
             font-size: 22px;
             margin: 10px;
-            left:13%;
-            top: 10%;
+            left:1%;
+            top: 2%;
                span{
                 cursor: pointer;
                 color: rgb(106, 106, 255);
@@ -85,19 +86,22 @@
 }
 @media screen and (max-width:850px) {
 .auth-page{
-    left:10%;
     margin-bottom: 300px;
     .login{
         width: 70%;
-        left: -39px;
+        left: -20px;
+        top: -100px;
     }
     .signUp{
         width: 68%;
-        left: -39px;
+        left: -20px;
+        top: 0;
+        bottom: 44px;
     }
      .auth{
          .switchButton{
             left: 0;
+            top: 0;
          }
 }}
 

@@ -39,7 +39,7 @@ const PaymentForm = () => {
      const paySubmitHandler =async(event) => {
       event.preventDefault();
       try{
-        await sendRequest('http://localhost:5000/api/order',"POST",JSON.stringify({
+        await sendRequest(process.env.REACT_APP_BACKEND_URL+'/api/order',"POST",JSON.stringify({
           fullName:formState.inputs.fullName.value,
           email:formState.inputs.email.value,
           address:formState.inputs.address.value,

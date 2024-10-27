@@ -37,7 +37,7 @@ const Navigation=()=>{
           <span />
           <span />
         </button>
-        <div className="navbar-header">Tomato.</div>
+        <div className="navbar-header" onClick={(()=>{navigate('/')})}>Tomato.</div>
         <div className='nav-menu'>
         <Navlink/>
         </div>

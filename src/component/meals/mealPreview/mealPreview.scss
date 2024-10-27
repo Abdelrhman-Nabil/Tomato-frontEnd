@@ -4,11 +4,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    background-image: url("../../../assets/photo1.jpg");
-    background-position: center;
+    // margin-bottom: 30px;
+    background-image: url("../../../assets/6.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
   
     .title {
       font-size: 28px;
@@ -38,8 +37,10 @@
       flex-direction: column;
       justify-content: center;
       position: relative;
-      width: 50%;
-      left: 18%;
+      background-image: url("../../../assets/6.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-bottom: 71px;
        h2 {
         
         margin-left: 20px;
@@ -49,7 +50,7 @@
         position: relative;
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 50px;
-        left: 5%;
+        // left: 5%;
     
       }
     }

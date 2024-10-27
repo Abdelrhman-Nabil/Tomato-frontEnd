@@ -14,7 +14,7 @@ const [orders,setOrders]=useState('')
 
   useEffect(()=>{
     const fetchOrder=async ()=>{
-      const responseData=await sendRequest('http://localhost:5000/api/order/getOrders')
+      const responseData=await sendRequest(process.env.REACT_APP_BACKEND_URL+'/api/order/getOrders')
        setOrders(responseData.orders)
        setTotalOrder(responseData.orders.length)
       }

@@ -23,7 +23,7 @@ const AddAddmins = () => {
 
   const addminSubmitHandler = async (event) => {
     try{
-      await sendRequest( "http://localhost:5000/api/admins/","POST",JSON.stringify({
+      await sendRequest( process.env.REACT_APP_BACKEND_URL+"/api/admins/","POST",JSON.stringify({
         email:formState.inputs.email.value,
         time:new Date(),
       }),{

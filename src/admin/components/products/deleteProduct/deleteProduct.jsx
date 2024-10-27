@@ -11,7 +11,7 @@ const DeleteProduct=({onClick,id})=>{
   const { error,clearError,isLoading,sendRequest} = useHttpClinet();
   const deleteHandler=async()=>{
     try{
-         await sendRequest(`http://localhost:5000/api/products/${id}`,'DELETE',null,{
+         await sendRequest(process.env.REACT_APP_BACKEND_URL+`/api/products/${id}`,'DELETE',null,{
           authorization:'Bearer '+ token
         })
     }

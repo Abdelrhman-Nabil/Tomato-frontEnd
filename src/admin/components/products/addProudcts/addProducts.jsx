@@ -49,7 +49,7 @@ const AddProduct = () => {
       formData.append("price",formState.inputs.price.value)
       formData.append("image",formState.inputs.image.value)
       formData.append("category",category);
-      await sendRequest('http://localhost:5000/api/products/',"POST",formData,{
+      await sendRequest(process.env.REACT_APP_BACKEND_URL+'/api/products/',"POST",formData,{
         authorization:'Bearer '+ token
       }) 
     }catch(err){}

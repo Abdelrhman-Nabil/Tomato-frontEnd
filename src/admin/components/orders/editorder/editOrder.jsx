@@ -16,7 +16,7 @@ const EditOrder=(props)=>{
     }
     const editHandler=async()=>{
             try{
-            await sendRequest(`http://localhost:5000/api/order/${id}`,"PATCH",JSON.stringify({
+            await sendRequest(process.env.REACT_APP_BACKEND_URL+`/api/order/${id}`,"PATCH",JSON.stringify({
                 action:action,
                 creator:creator
             }),{

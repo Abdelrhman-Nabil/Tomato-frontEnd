@@ -6,15 +6,10 @@
     align-items: center;
     // margin-bottom: 30px;    
     background-image: url("../../../assets/photo1.jpg");
-    background-position: top bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: mymove 5s infinite;
-  
-  
-  @keyframes mymove {
-    50% {background-position: center;}
-  }
+
 .products-container{
     display: grid;
     grid-template-columns: repeat(4, 0.2fr);
@@ -29,11 +24,11 @@
 }
 @media screen and (max-width:760px) {
     .headerMeals-page{
-        margin-bottom: 80px;   
         .products-container{
         display: grid;
         grid-template-columns: repeat(2, 0.2fr);
         column-gap: 5px;
+        margin-bottom: 150px;
     }
 }
 }

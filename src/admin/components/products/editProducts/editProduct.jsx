@@ -74,7 +74,7 @@ const EditProduct=()=>{
             formData.append("price",formState.inputs.price.value)
             formData.append("image",formState.inputs.image.value)
             formData.append("category",editedcategory);
-        await sendRequest(`http://localhost:5000/api/products/${id}`,"PATCH",formData, {
+        await sendRequest(process.env.REACT_APP_BACKEND_URL+`/api/products/${id}`,"PATCH",formData, {
           authorization: "Bearer " + token,
         })      
            }catch(err){}
@@ -93,7 +93,7 @@ const EditProduct=()=>{
           <form onSubmit={productSubmitHandler}>
          <div className='edit-product-data-frist-part'>
           { image &&<div className='imagePreview'>
-            <img src={`http://localhost:5000/${image}`}/>
+            <img src={`${process.env.REACT_APP_BACKEND_URL}/${image}`}/>
             </div>}
             <div className="uploadimage">
           <ImageUploadAuth

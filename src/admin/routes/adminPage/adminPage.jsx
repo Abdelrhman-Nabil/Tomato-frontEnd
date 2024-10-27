@@ -10,7 +10,7 @@ const AdminPage = () => {
   useEffect(()=>{
   const fetchAddmin=async()=>{
     try{
-      const addminsList=await sendRequest( 'http://localhost:5000/api/admins/getAddminEmails')
+      const addminsList=await sendRequest( process.env.REACT_APP_BACKEND_URL+'/api/admins/getAddminEmails')
     setAddminsList(addminsList.addminEmails)
     }catch(err){}
   }

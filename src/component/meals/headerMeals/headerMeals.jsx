@@ -17,7 +17,7 @@ useEffect(() => {
   const fetchUsers = async () => {
     try {
       const responseDataProduct = await sendRequest(
-        "http://localhost:5000/api/products/allProduct"
+        process.env.REACT_APP_BACKEND_URL+"/api/products/allProduct"
       );
 
       if (responseDataProduct) {

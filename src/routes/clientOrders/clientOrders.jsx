@@ -34,7 +34,7 @@ const ClientOrder = () => {
   useEffect(()=>{
      const fetchOrder=async()=>{
        try{
-         const responseDataOrder=await sendRequest(`http://localhost:5000/api/order/user/${userId}`)
+         const responseDataOrder=await sendRequest(process.env.REACT_APP_BACKEND_URL+`/api/order/user/${userId}`)
          if(responseDataOrder){
              setClientOrders(responseDataOrder.orders)
           }

@@ -11,7 +11,7 @@ const clearItemToHandler=()=>clearItemFromCart(cartItem);
 return(
     <div className='checkout-item-container'>
      <div className='container-image'>
-     <img  src={`http://localhost:5000/${image}`} alt={title}/>
+     <img  src={`${process.env.REACT_APP_BACKEND_URL}/${image}`} alt={title}/>
      </div>
      <span className='name'>{title}</span>
         <span className='quantity'>

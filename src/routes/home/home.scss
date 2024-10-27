@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("../../assets/photo1.jpg");
+    background-image: url("../../assets/6.jpg");
+    background-color: rgb(196, 43, 43);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -138,8 +139,7 @@
             width: 400px;
             height: 50px;
             top: 80px;
-            left: 365px;
-
+            left: 280px;
             img {
                 width: 200px;
                 height: 50px;
@@ -179,7 +179,7 @@
                 }
 
                 .description {
-                    font-size: 18px;
+                    font-size: 16px;
 
                 }
 
@@ -291,19 +291,20 @@
 
         .forth-part {
             height: 451px;
-
+            display: none;
+            flex-direction: column;
             .logo {
-                left: -40px;
-                top: 358px;
-                position: absolute;
+                display: flex;
+                
             }
         }
 
         .fifth-part {
 
-            width: 481px;
+            width: 375px;
             height: 387px;
-            margin-bottom: 159px;
+            margin-bottom: 10px;
+        
 
             .line {
                 top: 50px;

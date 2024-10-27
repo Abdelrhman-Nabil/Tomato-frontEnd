@@ -5,7 +5,7 @@ import Button from "../button/button"
 const PayButton=({cartItems})=>{
     const{userId}=useContext(AuthContext)
     const handlerCheckOut=async()=>{
-      axios.post(`http://localhost:5000/api/Stripe/create-checkout-session`,{
+      axios.post(process.env.REACT_APP_BACKEND_URL+`/api/Stripe/create-checkout-session`,{
         cartItems,
         userId:userId
       }).then((res)=>{

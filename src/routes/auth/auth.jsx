@@ -67,7 +67,7 @@ const Auth = () => {
     event.preventDefault();
     
     if(isLoginMode){
-    const responseData=await sendRequest( 'http://localhost:5000/api/users/logIn',"POST",JSON.stringify({
+    const responseData=await sendRequest( process.env.REACT_APP_BACKEND_URL+'/api/users/logIn',"POST",JSON.stringify({
       email:formState.inputs.email.value,
       password:formState.inputs.password.value,
      }),
@@ -78,7 +78,7 @@ const Auth = () => {
      {responseData.addmin===true ?navigate('/AdminPanel/DashBoard'):navigate('/')}
     }else{
       try{
-      const responseData=await sendRequest( 'http://localhost:5000/api/users/signUp',"POST",JSON.stringify({
+      const responseData=await sendRequest( process.env.REACT_APP_BACKEND_URL+'/api/users/signUp',"POST",JSON.stringify({
         email:formState.inputs.email.value,
         name:formState.inputs.name.value,
         password:formState.inputs.password.value,

@@ -11,7 +11,7 @@ import "./deleteAddmin.css";
     const deleteHandler = async () => {
       try {
         await sendRequest(
-          `http://localhost:5000/api/admins/${id}`,
+          process.env.REACT_APP_BACKEND_URL+`/api/admins/${id}`,
           "DELETE",
           null
         );
